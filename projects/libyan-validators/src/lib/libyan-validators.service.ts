@@ -73,7 +73,6 @@ export class LibyanValidatorsService {
     return null
   }
 
-
   NationalNumberValidator(control: AbstractControl): { [key: string]: any } | null {
     const NationalNumber: string = control.value == null ? '' : control.value.toString();
 
@@ -88,6 +87,7 @@ export class LibyanValidatorsService {
       NationalNumberError: Message
     }
   }
+  
   NationalNumberWithGenderValidator(control: AbstractControl): { [key: string]: any } | null {
 
     const Gender = control.root.value.gender
