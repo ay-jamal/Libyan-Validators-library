@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "author": "Ayhem Jamal",
   "repository": "https://github.com/ay-jamal/Libyan-Validators",
+  "keywords": [ 
+    "Angular", 
+    "Libya" ],  
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
