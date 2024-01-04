@@ -24,11 +24,10 @@ npm i libyan-validators
 
 ### Setup
 
+in your Component Ts File import The LibyanValidatorsService
+
 ```typescript
-
-  in your Component Ts File import The LibyanValidatorsService
-
-import { LibyanValidatorsService } from 'libyan-validators';
+import { LibyanValidatorsService } from "libyan-validators";
 ```
 
 ```typescript
