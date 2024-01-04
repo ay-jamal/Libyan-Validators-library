@@ -44,7 +44,7 @@ export class LibyanValidatorsService {
 
   PhoneNumberLimit(control: AbstractControl): { [key: string]: any } | null {
     console.log(control);
-    
+
     const phoneNumber: string = control.value == null ? '' : control.value.toString();
     if (phoneNumber == "")
       return null;
@@ -73,31 +73,22 @@ export class LibyanValidatorsService {
     return null
   }
 
-  NationalNumberValidator(control: AbstractControl): { [key: string]: any } | null {
-    const BirdDate = new Date(control.root.value.birthDate).getFullYear();
-    const Gender = control.root.value.gender
 
+  NationalNumberValidator(control: AbstractControl): { [key: string]: any } | null {
     const NationalNumber: string = control.value == null ? '' : control.value.toString();
 
-    const DateInNationalNumber = NationalNumber.substring(1, 5);
-    const Lastdigits = NationalNumber.substring(5);
     var Message = "";
-    if ((NationalNumber[0] == '1' && Gender != 'ذكر') || (NationalNumber[0] == '2' && Gender != 'انثى')) {
-      Message = "يجب ان يكون الجنس و الخانة الاولى من الرقم الوطني متطابقان"
 
-    } else if (DateInNationalNumber != BirdDate.toString()) {
-      Message = "يجب ان يكون تاريخ الميلاد مطابق للرقم الوطني"
+    if ((!NationalNumber.startsWith('1')) && (!NationalNumber.startsWith('2'))) {
+      Message = "الرقم الوطني في تنسيق غير صحيح "
     } else if (NationalNumber.length != 12) {
       Message = "يجب ان يكون عدد خانات الرقم الوطني 12 خانة"
-    } else if (Lastdigits == "0000000") {
-      Message = "لايسمح بأن يكون الرقم الوطني اصفار فقط"
     }
     return Message == "" ? null : {
       NationalNumberError: Message
     }
   }
-
-  NationalNumberWithoutBardDayValidator(control: AbstractControl): { [key: string]: any } | null {
+  NationalNumberWithGenderValidator(control: AbstractControl): { [key: string]: any } | null {
 
     const Gender = control.root.value.gender
     const NationalNumber: string = control.value == null ? '' : control.value.toString();
@@ -117,7 +108,7 @@ export class LibyanValidatorsService {
     }
   }
 
-  BirthDateValidator(control: AbstractControl): { [key: string]: any } | null {
+  NationalNumberBirthDateValidator(control: AbstractControl): { [key: string]: any } | null {
 
     const BirdDate = new Date(control.root.value.birthDate).getFullYear();
     const NationalNumber: string = control.root.getRawValue().nationalNumber == null ? '' : control.root.getRawValue().nationalNumber.toString();
@@ -127,6 +118,8 @@ export class LibyanValidatorsService {
 
     if (DateInNationalNumber != BirdDate.toString()) {
       Message = "يجب ان يكون تاريخ الميلاد مطابق للرقم الوطني"
+    } else if (NationalNumber.length != 12) {
+      Message = "يجب ان يكون عدد خانات الرقم الوطني 12 خانة"
     }
 
     return Message == "" ? null : {

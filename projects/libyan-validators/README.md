@@ -12,15 +12,15 @@ npm i libyan-validators
 
 ### Validator List
 
-| Validator Name                        | Description                                                                                 |
-| ------------------------------------- | ------------------------------------------------------------------------------------------- |
-| PhoneNumberValidations                | Validates Libyan phone numbers and ensures the correct prefix is used.                      |
-| LibyanaPhoneNumberValidations         | Validates Libyana phone numbers and ensures the correct prefix is used for Libyana network. |
-| PhoneNumberLimit                      | Validates the length of the phone number and ensures it has the correct number of digits.   |
-| AlmadarPhoneNumberValidations         | Validates Almadar phone numbers and ensures the correct prefix is used for Almadar network. |
-| NationalNumberValidator               | Validates the Libyan national number and checks if it matches the gender and birth date.    |
-| NationalNumberWithoutBardDayValidator | Validates the Libyan national number without checking the birth date.                       |
-| BirthDateValidator                    | Validates the birth date by comparing it with the birth date in the national number.        |
+| Validator Name                    | Description                                                                                 |
+| --------------------------------- | ------------------------------------------------------------------------------------------- |
+| PhoneNumberValidations            | Validates Libyan phone numbers and ensures the correct prefix is used.                      |
+| LibyanaPhoneNumberValidations     | Validates Libyana phone numbers and ensures the correct prefix is used for Libyana network. |
+| PhoneNumberLimit                  | Validates the length of the phone number and ensures it has the correct number of digits.   |
+| AlmadarPhoneNumberValidations     | Validates Almadar phone numbers and ensures the correct prefix is used for Almadar network. |
+| NationalNumberValidator           | Validates the Libyan national number and checks if it in correct syntax                     |
+| NationalNumberWithGenderValidator | Validates the Gender By checking Libyan national number date.                               |
+| BirthDateValidator                | Validates the birth date by comparing it with the birth date in the national number.        |
 
 ### Setup
 
