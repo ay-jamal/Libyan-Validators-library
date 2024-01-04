@@ -3,5 +3,41 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "Libyan-Validators": {
+      "projectType": "library",
+      "root": "projects/libyan-validators",
+      "sourceRoot": "projects/libyan-validators/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/libyan-validators/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/libyan-validators/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/libyan-validators/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/libyan-validators/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }
