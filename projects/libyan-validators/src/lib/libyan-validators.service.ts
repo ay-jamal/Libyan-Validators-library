@@ -8,7 +8,6 @@ export class LibyanValidatorsService {
 
   constructor() { }
 
-
   PhoneNumberValidations(control: AbstractControl): { [key: string]: any } | null {
     const phoneNumber: string = control.value == null ? '' : control.value.toString();
     if (phoneNumber == "")
@@ -44,6 +43,8 @@ export class LibyanValidatorsService {
   }
 
   PhoneNumberLimit(control: AbstractControl): { [key: string]: any } | null {
+    console.log(control);
+    
     const phoneNumber: string = control.value == null ? '' : control.value.toString();
     if (phoneNumber == "")
       return null;
@@ -71,7 +72,6 @@ export class LibyanValidatorsService {
     }
     return null
   }
-
 
   NationalNumberValidator(control: AbstractControl): { [key: string]: any } | null {
     const BirdDate = new Date(control.root.value.birthDate).getFullYear();

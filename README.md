@@ -1,27 +1,53 @@
-# LibyanValidators
+## Validation Library for Libyan Phone Numbers and National Numbers
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+This library provides custom validation functions specifically designed to work with Angular Reactive Forms for validating Libyan phone numbers and national numbers. It helps ensure the accuracy and validity of these numbers based on specific rules and criteria.
 
-## Development server
+### Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+You can install the library using npm. Open your terminal and run the following command:
 
-## Code scaffolding
+```shell
+npm i libyan-validators
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Validator List
 
-## Build
+| Validator Name             | Description                                                                                   |
+|----------------------------|-----------------------------------------------------------------------------------------------|
+| PhoneNumberValidations     | Validates Libyan phone numbers and ensures the correct prefix is used.                        |
+| LibyanaPhoneNumberValidations | Validates Libyana phone numbers and ensures the correct prefix is used for Libyana network. |
+| PhoneNumberLimit           | Validates the length of the phone number and ensures it has the correct number of digits.     |
+| AlmadarPhoneNumberValidations | Validates Almadar phone numbers and ensures the correct prefix is used for Almadar network. |
+| NationalNumberValidator    | Validates the Libyan national number and checks if it matches the gender and birth date.      |
+| NationalNumberWithoutBardDayValidator | Validates the Libyan national number without checking the birth date.                   |
+| BirthDateValidator         | Validates the birth date by comparing it with the birth date in the national number.         |
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Setup
 
-## Running unit tests
+```typescript
+  
+  in your Component Ts File import The LibyanValidatorsService
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+import { LibyanValidatorsService } from 'libyan-validators';
+```
 
-## Running end-to-end tests
+```typescript
+  constructor(
+    private libyan: LibyanValidatorsService
+  ) {
+  }
+  ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Use
 
-## Further help
+Add The Validator To the Validators Array In Your Form
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```typescript
+
+ Form = new FormGroup({
+    phoneNumber: new FormControl('', [this.libyan.AlmadarPhoneNumberValidations]),
+  })
+
+  ```
+
+
