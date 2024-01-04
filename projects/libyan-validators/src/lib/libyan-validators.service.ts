@@ -10,7 +10,6 @@ export class LibyanValidatorsService {
 
 
   PhoneNumberValidations(control: AbstractControl): { [key: string]: any } | null {
-
     const phoneNumber: string = control.value == null ? '' : control.value.toString();
     if (phoneNumber == "")
       return null;
