@@ -32,7 +32,7 @@ import { LibyanValidatorsService } from "libyan-validators";
 
 ```typescript
   constructor(
-    private libyan: LibyanValidatorsService
+    private libyanValidatorsService: LibyanValidatorsService
   ) {
   }
 ```
