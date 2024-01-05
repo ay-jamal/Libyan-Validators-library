@@ -43,7 +43,7 @@ Add The Validator To the Validators Array In Your Form
 
 ```typescript
 Form = new FormGroup({
-  phoneNumber: new FormControl("", [this.libyan.AlmadarPhoneNumberValidations]),
+  phoneNumber: new FormControl("", [this.libyanValidatorsService.AlmadarPhoneNumberValidations]),
 });
 ```
 

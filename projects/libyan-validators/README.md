@@ -32,7 +32,7 @@ import { LibyanValidatorsService } from "libyan-validators";
 
 ```typescript
   constructor(
-    private libyan: LibyanValidatorsService
+    private libyanValidatorsService: LibyanValidatorsService
   ) {
   }
 ```
@@ -43,7 +43,7 @@ Add The Validator To the Validators Array In Your Form
 
 ```typescript
 Form = new FormGroup({
-  phoneNumber: new FormControl("", [this.libyan.AlmadarPhoneNumberValidations]),
+  phoneNumber: new FormControl("", [this.libyanValidatorsService.AlmadarPhoneNumberValidations]),
 });
 ```
 
