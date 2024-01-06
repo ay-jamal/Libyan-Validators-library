@@ -3,5 +3,3 @@
  */
 
 export * from './lib/libyan-validators.service';
-
-
