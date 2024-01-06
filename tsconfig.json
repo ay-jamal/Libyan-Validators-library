@@ -3,11 +3,11 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "Libyan-Validators": [
-        "dist/libyan-validators/lib/libyan-validators.service.d.ts"
-      ]
+      "Libyan-Validators": ["dist/libyan-validators"],
+      "@service": ["/dist/libyan-validators/lib/libyan-validators.service.d.ts"]
     },
-    "baseUrl": "./",
+    "baseUrl": "./dist",
+
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -24,10 +24,7 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
