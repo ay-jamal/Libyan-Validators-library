@@ -3,8 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "Libyan-Validators": ["dist/libyan-validators"],
-      "@service": ["/dist/libyan-validators/lib/libyan-validators.service.d.ts"]
+      "Libyan-Validators": ["dist/libyan-validators/lib/libyan-validators.service.d.ts"],
     },
     "baseUrl": "./dist",
 
