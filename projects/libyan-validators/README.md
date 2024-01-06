@@ -20,7 +20,7 @@ npm i libyan-validators
 | AlmadarPhoneNumberValidations     | Validates Almadar phone numbers and ensures the correct prefix is used for Almadar network. |
 | NationalNumberValidator           | Validates the Libyan national number and checks if it in correct syntax                     |
 | NationalNumberWithGenderValidator | Validates the Gender By checking Libyan national number date.                               |
-| BirthDateValidator                | Validates the birth date by comparing it with the birth date in the national number.        |
+| NationalNumberGenderValidator     | Validates the birth date by comparing it with the birth date in the national number.        |
 
 ### Setup
 
@@ -41,9 +41,24 @@ import { LibyanValidatorsService } from "libyan-validators";
 
 Add The Validator To the Validators Array In Your Form
 
+#### expample 1
+
 ```typescript
 Form = new FormGroup({
   phoneNumber: new FormControl("", [this.libyanValidatorsService.AlmadarPhoneNumberValidations]),
+});
+```
+
+#### expample 2
+
+if you want to use the NationalNumberGenderValidator or NationalNumberBirthDateValidator make sure to pass
+the national number control name as parameter to the Validator
+
+```typescript
+Form = new FormGroup({
+  nationalNumber: new FormControl("", [Validators.required, this.LibyanValidatorsService.NationalNumberValidator]),
+  birthDay: new FormControl("", [Validators.required, this.LibyanValidatorsService.NationalNumberBirthDateValidator("nationalNumber")]),
+  gender: new FormControl("", [Validators.required, this.LibyanValidatorsService.NationalNumberGenderValidator("nationalNumber")]),
 });
 ```
 
