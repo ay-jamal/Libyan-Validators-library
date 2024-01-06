@@ -64,6 +64,6 @@ Form = new FormGroup({
 
 ### About
 
-This library is available on [GitHub](https://github.com/ay-jamal/Libyan-Validators). You can find the source code, contribute to the project, and report issues or suggestions there.
+This library is available on [GitHub](https://github.com/ay-jamal/Libyan-Validators-library). You can find the source code, contribute to the project, and report issues or suggestions there.
 
-If you have any issues or suggestions for improvements, please feel free to contribute to the library by opening an issue or submitting a pull request on the [GitHub repository](https://github.com/ay-jamal/Libyan-Validators).
+If you have any issues or suggestions for improvements, please feel free to contribute to the library by opening an issue or submitting a pull request on the [GitHub repository](https://github.com/ay-jamal/Libyan-Validators-library).
