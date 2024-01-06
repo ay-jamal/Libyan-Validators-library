@@ -4,7 +4,7 @@
   "compilerOptions": {
     "paths": {
       "Libyan-Validators": [
-        "dist/libyan-validators"
+        "dist/libyan-validators/lib/libyan-validators.service.d.ts"
       ]
     },
     "baseUrl": "./",
